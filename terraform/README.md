@@ -1,6 +1,7 @@
 ## ⚙️ Terraform Automation with Makefile
 
-Managing Terraform can involve typing the same long commands repeatedly. To save time and avoid mistakes, we’ve added a [Makefile](./terraform/Makefile) to this project.
+Managing Terraform can involve typing the same long commands repeatedly. To save time and avoid mistakes, we’ve added a Makefile to this project. This helps automate Terraform tasks like init, plan, apply, destroy, and more — using short, consistent commands.
+
 
 ### 📄 What’s a Makefile?
 A Makefile is a file that lets you run Terraform commands like:
@@ -42,22 +43,18 @@ make clean     # Remove .terraform and state files (be careful!)
 ```
 
 ### 📁 Where’s the Makefile?
-It’s in the root folder of this repo. Open it to see all available commands.
+It’s located at [`terraform/Makefile`](./Makefile). Open it to see all available commands.
 
 ### 🗂️ Sample Terraform Project Structure with Makefile
 Here’s a simple example of how your Terraform project directory might look:
 
 ```sh
 terraform-project/
-│
 ├── main.tf                  # Main Terraform config
-├── variables.tf             # Input variables
-├── outputs.tf               # Output values
-├── provider.tf              # Provider config (AWS, Azure, etc.)
-├── terraform.tfvars         # Variable values (usually ignored in VCS)
 ├── Makefile                 # Automation file (init, plan, apply, etc.)
 ├── README.md                # Project documentation
 ```
+
 
 ### 🧠 Summary
 
