@@ -96,7 +96,10 @@ This is a simple reference for common Terraform CLI commands, perfect for quick 
 
 ### 📚 Pro Tip
 
-Use `make` or shell scripts to group commands into reusable automation tasks!
+Use `make` or shell scripts to group commands into reusable automation tasks.  
+➡️ [Learn how to use the Makefile](./terraform/README.md#how-to-use-the-makefile)
+
+
 
 ### 🧠 Tips for Interviews
 

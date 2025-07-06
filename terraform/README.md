@@ -1,6 +1,6 @@
 ## ⚙️ Terraform Automation with Makefile
 
-Managing Terraform can involve typing the same long commands repeatedly. To save time and avoid mistakes, we’ve added a Makefile to this project.
+Managing Terraform can involve typing the same long commands repeatedly. To save time and avoid mistakes, we’ve added a [Makefile](./terraform/Makefile) to this project.
 
 ### 📄 What’s a Makefile?
 A Makefile is a file that lets you run Terraform commands like:
@@ -57,16 +57,6 @@ terraform-project/
 ├── terraform.tfvars         # Variable values (usually ignored in VCS)
 ├── Makefile                 # Automation file (init, plan, apply, etc.)
 ├── README.md                # Project documentation
-├── .terraform.lock.hcl      # Dependency lock file
-├── modules/                 # Reusable modules (optional)
-│   └── vpc/                 # Example module
-│       ├── main.tf
-│       ├── variables.tf
-│       └── outputs.tf
-└── environments/            # Separate envs like dev/staging/prod (optional)
-    └── dev/
-        ├── main.tf
-        └── terraform.tfvars
 ```
 
 ### 🧠 Summary
