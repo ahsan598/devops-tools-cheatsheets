@@ -98,7 +98,7 @@ This is a simple reference for common Terraform CLI commands, perfect for quick 
 
 Use `make` or shell scripts to group commands into reusable automation tasks.  
 
-➡️ [Learn how to use the Makefile](./terraform/README.md)
+➡️ [Learn how to use the Makefile](./README.md)
 
 
 
