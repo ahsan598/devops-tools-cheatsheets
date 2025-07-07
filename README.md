@@ -12,7 +12,7 @@ This repository contains essential commands and cheat sheets for commonly used D
 
 | Tool         | Branch Link                                                                 |
 |--------------|------------------------------------------------------------------------------|
-| 🌍 Terraform  | [View Terraform Branch](https://github.com/ahsan598/devops-cheatsheets/tree/terraform) |
+| 🌍 Terraform  | [View Terraform Commands](https://github.com/ahsan598/devops-cheatsheets/tree/terraform) |
 | ☸️ Kubernetes | Coming soon                                                                 |
 | 🧰 Git        | Coming soon                                                                 |
 | 🐳 Docker     | Coming soon                                                                 |
