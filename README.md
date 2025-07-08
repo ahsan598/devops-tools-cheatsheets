@@ -14,7 +14,7 @@ This repository contains essential commands and cheat sheets for commonly used D
 |--------------|------------------------------------------------------------------------------|
 | 🌍 Terraform  | [View Terraform Commands](https://github.com/ahsan598/devops-cheatsheets/tree/terraform) |
 | ☸️ Kubernetes | Coming soon                                                                 |
-| 🧰 Git        | Coming soon                                                                 |
+| 🧰 Git        | [View Git Commands](https://github.com/ahsan598/devops-cheatsheets/tree/git)                                                                |
 | 🐳 Docker     | Coming soon                                                                 |
 | ⚙️ Ansible    | Coming soon                                                                 |
 
