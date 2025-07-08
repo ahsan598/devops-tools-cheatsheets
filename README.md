@@ -41,10 +41,11 @@ terraform apply
 ---
 
 ### 📚 Recommended Resources
+- 🛠️ [How to Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 - 📘 [Terraform Official Docs](https://developer.hashicorp.com/terraform/docs)
 - 🎥 [Terraform on YouTube - HashiCorp Channel](https://www.youtube.com/c/HashiCorp?themeRefresh=1)
 - 🏗️ [Terraform Registry – Modules & Providers](https://registry.terraform.io/)
-- 🛠️ [Play with Terraform (in-browser demo)](https://developer.hashicorp.com/terraform/tutorials/aws-get-started)
+- 🧪 [Play with Terraform (in-browser demo)](https://developer.hashicorp.com/terraform/tutorials/aws-get-started)
 
 ---
 
