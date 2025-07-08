@@ -81,33 +81,34 @@ This is a simple reference for common Terraform CLI commands, perfect for quick 
 | Command                     | What It Does                                                          |
 | --------------------------- | --------------------------------------------------------------------- |
 | `terraform fmt`             | Auto-formats your code (clean layout)                                 |
-| `terraform-docs markdown .` | Generates README-like docs from your code (requires `terraform-docs`) |
+| `terraform-docs markdown .` | Generates README-like docs from your code (requires `terraform-docs` tool installed) |
 
 ---
 
 ### 🛠️ Debugging & Utilities
 
-| Command               | Purpose                                           |
-| --------------------- | ------------------------------------------------- |
-| `terraform console`   | Interactive console to inspect values/expressions |
-| `terraform graph`     | Visualize resource relationships as DOT graph     |
-| `terraform providers` | List required and installed providers             |
-| `terraform version`   | Show installed version of Terraform               |
-| `terraform login`     | Authenticate to Terraform Cloud (if used)         |
-| `terraform logout`    | Log out of Terraform Cloud                        |
-| `terraform config`    | Show or set CLI configuration options             |
+| Command               | Purpose                                                               |
+| --------------------- | --------------------------------------------------------------------- |
+| `terraform console`   | Opens an interactive shell to evaluate expressions and inspect values |
+| `terraform graph`     | Generates a DOT format graph of resource relationships                |
+| `terraform providers` | Lists all required and installed providers                            |
+| `terraform version`   | Displays the current Terraform version                                |
+| `terraform config`    | Shows or sets CLI config options (e.g., credentials, settings)        |
 
----
 
-### 📤 Cloud & Backend (Advanced Use)
+📤 Cloud & Backend / State Management (Advanced Use)
 
-| Command                               | Purpose                                                    |
-| ------------------------------------- | ---------------------------------------------------------- |
-| `terraform login` / `logout`          | Log in to Terraform Cloud                                  |
-| `terraform state pull` / `push`       | Manually sync state files (e.g., remote backends)          |
-| `terraform force-unlock <lock-id>` ⚠️ | Remove a stuck state lock                                  |
-| `terraform taint <resource>` ⚠️       | Mark resource for destruction (deprecated; use `-replace`) |
-| `terraform apply -replace="resource"` | Recreate a specific resource                               |
+| Command                               | Purpose                                                            |
+| ------------------------------------- | ------------------------------------------------------------------ |
+| `terraform login`                     | Authenticate to Terraform Cloud (stores credentials locally)       |
+| `terraform logout`                    | Remove saved credentials for Terraform Cloud                       |
+| `terraform state pull`                | Download the raw state from the backend                            |
+| `terraform state push`                | Upload a modified state file to the backend (use with caution)     |
+| `terraform force-unlock <lock-id>` ⚠️ | Manually remove a stuck state lock (only if you're sure it's safe) |
+
+### ⚠️ Notes:
+- `terraform state push` is rarely used — generally only in manual recovery or advanced automation.
+- `terraform force-unlock` is risky and should only be used when you're sure no one else is modifying the state.
 
 ---
 
@@ -116,7 +117,8 @@ This is a simple reference for common Terraform CLI commands, perfect for quick 
 | Command                        | What It Does                                                            |
 | ------------------------------ | ----------------------------------------------------------------------- |
 | `terraform graph`              | Outputs a graph of your resources (useful for visualizing dependencies) |
-| `terraform taint <resource>`   | Marks a resource for recreation in next apply                           |
+| `terraform taint <resource>` ⚠️       | Mark resource for destruction (deprecated; use `-replace`)       |
+| `terraform apply -replace="resource"`  | Recreate a specific resource                                    |
 | `terraform untaint <resource>` | Removes taint (won’t recreate)                                          |
 | `terraform version`            | Shows current Terraform version                                         |
 | `terraform providers`          | Lists the providers being used (like AWS, Azure, etc.)                  |
