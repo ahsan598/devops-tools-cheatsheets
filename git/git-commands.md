@@ -11,7 +11,6 @@
 | `git log`                     | Show commit history                                               |
 | `git log --oneline --graph`   | Compact graphical log (great for quick view)                      |
 | `git diff`                    | See differences between changes                                   |
-| `git config --global init.defaultBranch main`|     |
 
 ---
 
@@ -23,7 +22,7 @@
 | `git branch <name>`                      | Create a new branch                                        |
 | `git checkout <name>`                    | Switch to a branch                                         |
 | `git checkout -b <name>`                 | Create and switch to new branch                            |
-| `git switch -c <name>`                   | Alternate command to switch to new branch                  |
+| `git switch -c <name>`                   | modern alternative to checkout                             |
 | `git merge <branch>`                     | Merge given branch into current branch                     |
 | `git merge --no-ff <branch>`             | Forces a merge commit, useful for clear history in teams.  |
 | `git branch -d <name>`                   | Delete a branch (only if merged)                           |
@@ -101,39 +100,76 @@
 
 ### ⚙️ Configuration & Setup
 
-| Command                                     | What It Does                                         |
+| Command                                    | What It Does                                          |
 | ------------------------------------------ | ----------------------------------------------------- |
 | `git config --list`                        | Show all Git config                                   |
 | `git config --global user.name "Name"`     | Set global username                                   |
 | `git config --global user.email "Email"`   | Set global email                                      |
 | `git config credential.helper store`       | Save credentials (not secure – for local/dev only)    |
+| `git config core.autocrlf input`           | Prevent Windows vs Linux line ending issues           |
+| `git config alias.<name>`                  | Custom command aliases                                |
+| `git config --global init.defaultBranch main`| Set default branch name to main when initializing new repositories |
+
+> Ex: Custom command aliases example
+> ```sh
+> git config --global alias.lg "log --oneline --graph --all"
+> ```
 
 ---
 
 ### 🧩 Advanced (Used in Teams / DevSecOps)
 
-| Command                                           | What It Does                                               |
-| ------------------------------------------------ | ---------------------------------------------------------- |
-| `git worktree add ../new-folder <branch>`        | Use multiple working trees for different branches          |
-| `git filter-branch --force ...`                  | Remove files from Git history (e.g., secrets)              |
-| `git bisect`                                     | Find commit that introduced a bug                          |
-| `git submodule add <repo>`                       | Add repo as a submodule                                    |
-| `git tag <name>`                                 | Tag a specific commit (e.g., v1.0.0)                        |
-| `git archive -o out.zip HEAD`                    | Export current branch as zip archive                       |
+| Command                                          | What It Does                                     |
+| ------------------------------------------------ | -------------------------------------------------|
+| `git worktree add ../new-folder <branch>`        | Use multiple working trees for different branches     |
+| `git filter-branch --force ...`                  | Remove files from Git history (e.g., secrets)         |
+| `git bisect`                                     | Find commit that introduced a bug                     |
+| `git submodule add <repo>`                       | Add repo as a submodule                               |
+| `git tag <name>`                                 | Tag a specific commit (e.g., v1.0.0)                  |
+| `git archive -o out.zip HEAD`                    | Export current branch as zip archive                  |
+
+> `git bisect` is a power move in debugging. Definitely worth mastering.
+
+
+🧩 Advanced / DevSecOps + GitOps Essentials
+
+| Command                               | What It Does / Short Description                                |
+| ------------------------------------- | ----------------------------------------------------------------|
+| `git sparse-checkout init` + `set`    | Checkout only specific folders from a large repo (great for monorepos) |
+| `git fsck`                            | Check repo for corruption and dangling commits                  |
+| `git gc`                              | Clean up unnecessary files and optimize the local repository    |
+| `git revert HEAD~2..HEAD`             | Revert a **range** of commits (last 2 commits in this example)  |
+| `git rebase -i HEAD~3`                | Interactive rebase: squash, reorder, or edit last 3 commits     |
+| `git worktree add ../folder <branch>` | Create a new working directory tied to a different branch (parallel workspace) |
+| `git archive -o release.zip HEAD`     | Export current repo content as a `.zip` file (useful for releases/artifacts) |
+| `git log --graph --all --decorate`    | Visualize entire repo history (useful in teams and large repos) |
+
+
+🔧 GitOps & CI/CD Relevance (Bonus for DevOps Interviews)
+
+| Concept / Command              | Use Case / Why It’s Useful                                           |
+| ------------------------------ | ---------------------------------------------------------------------|
+| GitOps                         | Git as the **single source of truth** for infrastructure (IaC) and deployments |
+| `git tag <v1.0.0>`             | Mark a commit for a release; used in CI/CD pipelines                 |
+| `git push origin --tags`       | Push all tags to remote (so CI/CD can trigger from them)             |
+| `git checkout <tag>`           | Checkout a specific release state                                    |
+| `git diff <commit1> <commit2>` | Compare environments or code before/after deployment                 |
+
 
 ---
 
 ### 🧠 Git Interview Tips
 
-| Question / Concept                              | Explanation Hint |
-| ----------------------------------------------- | ---------------- |
+| Question / Concept                              | Explanation Hint                                  |
+| ----------------------------------------------- | --------------------------------------------------|
 | `git merge vs rebase`                           | Rebase rewrites history, merge creates new commit |
 | `git reset vs revert`                           | Reset removes, revert undoes via new commit       |
 | `stash use case`                                | Switch context without committing                 |
 | `detached HEAD`                                 | HEAD not pointing to a branch                     |
 | `.gitignore vs .gitkeep`                        | Ignore files vs keep empty folders                |
-| `how to undo pushed commit safely?`             | `git revert`, not `reset --hard`                 |
+| `how to undo pushed commit safely?`             | `git revert`, not `reset --hard`                  |
 | `tracking branch`                               | Local branch linked to remote (upstream)          |
+
 
 
 > "Rebase rewrites history and should not be used on shared branches unless you know what you're doing."
