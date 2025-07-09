@@ -1,13 +1,12 @@
 # Git Cheatsheet – DevSecOps Friendly
 
-This folder contains a simple but powerful reference to commonly used Git commands, useful for:
-- Daily development
-- Team collaboration
-- Advanced troubleshooting
-- Interview preparation
+This folder contains a simple reference to commonly used Git commands, useful for:
+- Daily Development
+- Learning Basics
+- Interview Preparation
 
 ### 📂 Files Included:
-- `git-commands`: All basic to advanced Git commands
+- `git-commands`: All necessary basic Git commands
 - `README.md`: Overview and purpose of this Git section
 
 Use this for quick recall before interviews or while working with Git in real-world CI/CD pipelines.

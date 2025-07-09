@@ -1,23 +1,23 @@
 # 🧬 Git Cheatsheet
 
 ### 📖 What is Git?
-Git is a distributed version control system used to track changes in source code during software development. It allows teams to collaborate, manage code history, switch between features using branches, and safely deploy changes.
+**Git is a distributed version control system used to track changes in source code during software development. It allows teams to collaborate, manage code history, switch between features using branches, and safely deploy changes.**
 
-Git is the backbone of platforms like GitHub, GitLab, Bitbucket, and widely used in DevOps, CI/CD, and cloud automation workflows.
+### Git is the backbone of platforms like GitHub, GitLab, Bitbucket, and widely used in DevOps, CI/CD, and cloud automation workflows.
 
 
 ### 💡 🛠️ How to Install Git
 
 - Linux (Debian/Ubuntu):
-```sh
-sudo apt update
-sudo apt install git
-```
+  ```sh
+  sudo apt update
+  sudo apt install git
+  ```
 
 - macOS (with Homebrew):
-```sh
-brew install git
-```
+  ```sh
+  brew install git
+  ```
 
 - Windows:
 👉 Download Git from [here](https://git-scm.com/downloads)
@@ -26,7 +26,7 @@ brew install git
 
 ### 📚 Recommended Resources
 - 📘 [Official Git Documentation](https://git-scm.com/doc)
-- 📖 [Pro Git Book](https://git-scm.com/book/en/v2) (Free)
+- 📖 [Pro Git Book (Free)](https://git-scm.com/book/en/v2)
 - 🎥 [Git & GitHub Crash Course (YouTube)](https://www.youtube.com/watch?v=RGOj5yH7evk)
 - 🧪 [Learn Git Branching (Interactive Visual Tool)](https://learngitbranching.js.org/)
 
@@ -56,13 +56,13 @@ brew install git
 Clone the repo and switch to this branch:
 
 ```sh
-git clone https://github.com/ahsan598/devops-cheatsheets.git
-cd devops-cheatsheets
+git clone https://github.com/ahsan598/devops-tools-cheatsheets.git
+cd devops-tools-cheatsheets
 git checkout git
 ```
 View Git command reference:
 ```sh
-cat Git/git-commands.md
+cat git/git-commands.md
 ```
 
 Or open in GitHub → [Git CLI Commands](./git/git-commands.md)

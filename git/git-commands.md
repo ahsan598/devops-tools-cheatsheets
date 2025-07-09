@@ -52,6 +52,7 @@
 | `git reset --mixed HEAD~1`          | Undo last commit, unstage changes                                   |
 | `git reset --hard HEAD~1`           | Completely undo last commit and discard changes                     |
 | `git revert <commit>`               | Create a new commit to reverse a specific commit (non-destructive)  |
+| `git revert -m 1 <merge-commit-sha>`| Use this when you want to undo a merge without rewriting history.  |
 | `git clean -fd`                     | Delete untracked files and folders                                  |
 | `git checkout -- <file>`            | Discard local changes to a file                                     |
 | `git restore <file>`                | (Newer syntax) Restore file to last commit state                    |
@@ -119,90 +120,3 @@
 | `.gitignore vs .gitkeep`                        | Ignore files vs keep empty folders                |
 | `how to undo pushed commit safely?`             | `git revert`, not `reset --hard`                 |
 | `tracking branch`                               | Local branch linked to remote (upstream)          |
-
----
-
-# 📁 Repository Setup & Remote Handling
-
-### 🔁 📦 When Repository Name or Remote URL Changes
-
-| 🔧 Command                            | 💬 What It Does                                               |
-| ------------------------------------- | ------------------------------------------------------------- |
-| `git remote -v`                       | Check current remote URL (origin)                             |
-| `git remote set-url origin <new-url>` | Update the remote URL after repo name or host changes         |
-| `git remote get-url origin`           | Verify that the remote URL was updated correctly              |
-| `git push -u origin <branch>`         | Set upstream again (optional if push fails due to URL change) |
-
-
-#### Example (after renaming repo on GitHub):
-```sh
-git remote set-url origin https://github.com/username/new-repo-name.git
-```
-
----
-
-# 🆕 📁 Creating a New Git Repository (Local & Remote)
-
-### ✅ Option 1: Create Local → Link to Remote
-
-| Step | Command                                   | Description                                |
-| ---- | ----------------------------------------- | ------------------------------------------ |
-| 1️⃣  | `git init`                                | Initialize empty Git repo locally          |
-| 2️⃣  | `git add .`                               | Stage all current files                    |
-| 3️⃣  | `git commit -m "Initial commit"`          | Make first commit                          |
-| 4️⃣  | Create repo on GitHub/GitLab (no README!) | Manually (via browser)                     |
-| 5️⃣  | `git remote add origin <repo-url>`        | Link local repo to remote                  |
-| 6️⃣  | `git branch -M main`                      | Rename default branch to `main` (optional) |
-| 7️⃣  | `git push -u origin main`                 | Push local code to remote                  |
-
-
-### ✅ Option 2: Clone Remote Repo → Work Locally
-
-| Step | Command                        | Description                          |
-| ---- | ------------------------------ | ------------------------------------ |
-| 1️⃣  | `git clone <repo-url>`         | Clone the remote repo to your system |
-| 2️⃣  | `cd <repo-name>`               | Go into the cloned repo folder       |
-| 3️⃣  | `git status` / `git add`, etc. | Make changes, commit, and push       |
-
-
-### 📝 Pro Tip
-- Use `git remote rename <old> <new>` if origin name needs to change (rare).
-- Use `git remote remove origin` and `add` again if it gets corrupted.
-
-
-### ❌🗑️ How to Delete the Repo
-
-| Action                    | Command / Steps                           |
-| ------------------------- | ----------------------------------------- |
-| Delete repo on GitHub     | Go to repo → Settings → Delete repository |
-| Delete repo locally       | `rm -rf <repo-folder>`                    |
-| Remove remote from local  | `git remote remove origin`                |
-| Reconnect to new repo URL | `git remote add origin <new-url>`         |
-
-
----
-
-# ✅  GitHub standard recommended steps
-
-### 🔧 1. Create a new repository on the command line (starting from scratch)
-```sh
-echo "# test" >> README.md      # Creates a README
-git init                        # Initialize local git repo
-git add README.md               # Stage file
-git commit -m "first commit"    # Commit changes
-git branch -M main              # Rename branch to main (if default is master)
-git remote add origin <repo-url>  # Connect to remote
-git push -u origin main         # Push to GitHub and set upstream
-```
-
-> ✅ Perfect for: Starting from local → pushing to newly created GitHub repo.
-
-
-### 📤 2. Push an existing repository to GitHub
-```sh
-git remote add origin <repo-url>
-git branch -M main
-git push -u origin main
-```
-
-> ✅ Perfect if: You already have commits locally and now linking to a remote.
