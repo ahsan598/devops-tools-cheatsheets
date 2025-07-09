@@ -13,18 +13,11 @@
 | `git diff`                    | See differences between changes                                   |
 
 
-::: tip
-Use `git add .` to stage all modified files quickly.
-:::
+> 💡 **Tip:** Use `git add .` to stage all modified files quickly.
 
-::: note
-`git commit -m "msg"` creates a snapshot of staged changes.
-:::
+> 📝 **Note:** `git commit -m "msg"` creates a snapshot of staged changes.
 
-::: warning
-Avoid committing sensitive info (e.g., `.env`, secrets) — use `.gitignore`.
-:::
-
+> ⚠️ **Warning:** Avoid committing sensitive info (e.g., `.env`, secrets) — use `.gitignore`.
 
 ---
 
