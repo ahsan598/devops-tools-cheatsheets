@@ -1,6 +1,6 @@
 # Git Cheatsheet – DevSecOps Friendly
 
-This folder contains a simple reference to commonly used Git commands, useful for:
+This folder contains a simple reference to commonly used **Git** commands, useful for:
 - Daily Development
 - Learning Basics
 - Interview Preparation
@@ -11,4 +11,4 @@ This folder contains a simple reference to commonly used Git commands, useful fo
 
 Use this for quick recall before interviews or while working with Git in real-world CI/CD pipelines.
 
-🧠 Tip: Master Git concepts like **rebase**, **cherry-pick**, **stash**, and **reset** for DevOps and DevSecOps interviews.
+### 🧠 Tip: Master Git concepts like rebase, cherry-pick, stash, and reset for DevOps and DevSecOps interviews.
