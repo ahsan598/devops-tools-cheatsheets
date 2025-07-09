@@ -1,6 +1,6 @@
 # 🛠️ DevOps Tools Cheat Sheets
 
-Welcome! 👋  
+### Welcome! 👋  
 This repository is a collection of simple and useful **DevOps cheat sheets** to help you:
 
 - ✅ Prepare for interviews  
@@ -67,4 +67,4 @@ This project is licensed under the [MIT License](./LICENSE).
 
 ---
 
-Thanks for visiting! ✨  
+### Thanks for visiting! ✨  

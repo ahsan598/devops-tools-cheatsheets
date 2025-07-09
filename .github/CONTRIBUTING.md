@@ -1,6 +1,6 @@
 # 🙌 Contributing to DevOps Tools Cheat Sheets
 
-Hey there! 👋  
+### Hey there! 👋  
 Thanks for thinking about contributing to this project.  
 Every small contribution helps others learn DevOps faster and better 🚀
 
@@ -32,7 +32,7 @@ Read our [Code of Conduct](./CODE_OF_CONDUCT.md) before contributing.
 - In your local clone, create a branch for your contribution:
    ```sh
    git checkout -b add-<tool-name>-cheatsheet
-   # Example: git checkout -b add-docker-cheatsheet
+   # Example: git checkout -b add-docker-basics-cheatsheet
    ```
 
 4. Add your content:
@@ -80,4 +80,4 @@ By contributing, you agree that your work will be licensed under the [MIT Licens
 
 ---
 
-Thank you for your valuable contribution! 💙
+### Thank you for your valuable contribution! 💙
