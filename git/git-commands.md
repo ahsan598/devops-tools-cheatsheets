@@ -12,6 +12,20 @@
 | `git log --oneline --graph`   | Compact graphical log (great for quick view)                      |
 | `git diff`                    | See differences between changes                                   |
 
+
+::: tip
+Use `git add .` to stage all modified files quickly.
+:::
+
+::: note
+`git commit -m "msg"` creates a snapshot of staged changes.
+:::
+
+::: warning
+Avoid committing sensitive info (e.g., `.env`, secrets) — use `.gitignore`.
+:::
+
+
 ---
 
 ### 🧠 Branching & Merging
@@ -22,13 +36,26 @@
 | `git branch <name>`                      | Create a new branch                                        |
 | `git checkout <name>`                    | Switch to a branch                                         |
 | `git checkout -b <name>`                 | Create and switch to new branch                            |
-| `git switch -c <name>`                   | modern alternative to checkout                             |
+| `git switch -c <name>`                   | Modern alternative to checkout                             |
 | `git merge <branch>`                     | Merge given branch into current branch                     |
 | `git merge --no-ff <branch>`             | Forces a merge commit, useful for clear history in teams.  |
 | `git branch -d <name>`                   | Delete a branch (only if merged)                           |
 | `git branch -D <name>`                   | Force delete branch (even if not merged)                   |
 | `git rebase <branch>`                    | Reapply commits from current branch onto target branch     |
 | `git cherry-pick <commit>`               | Apply a specific commit from another branch                |
+
+
+::: tip
+Use `git switch -c <branch>` to create and switch in one step.
+:::
+
+::: note
+`git merge <branch>` creates a merge commit unless fast-forward is possible.
+:::
+
+::: warning
+Merging without pulling latest changes may cause conflicts.
+:::
 
 ---
 
@@ -45,6 +72,18 @@
 | `git fetch --all`                           | Fetch all branches and updates                       |
 | `git push origin --delete <branch>`         | To delete remote branch                              |
 | `git remote prune origin`                   | Cleanup stale branches                               |
+
+::: tip
+Use `git push --set-upstream origin <branch>` to link local and remote branches.
+:::
+
+::: note
+`git fetch` gets latest changes **without merging** them.
+:::
+
+::: warning
+Don't force push (`--force`) unless you're 100% sure — it rewrites remote history.
+:::
 
 ---
 
@@ -64,8 +103,26 @@
 | `git restore <file>`                | (Newer syntax) Restore file to last commit state             |
 
 
-> ⚠️ `git reset --hard` is **dangerous**. Always warn that it discards local changes **permanently**.
-> 
+::: note
+`git revert` is safe for public branches — it doesn’t rewrite history.
+:::
+
+::: warning
+⚠️ `git reset --hard` is **dangerous**. Always warn that it discards local changes **permanently**.
+:::
+
+::: tip
+Use `git revert <commit>` to safely undo changes on public branches.
+:::
+
+::: note
+`git reset --soft HEAD~1` undoes the last commit but keeps your changes staged.
+:::
+
+::: warning
+`git reset --hard` will permanently delete local changes — use with caution!
+:::
+
 ---
 
 ### 📦 Stash & Patch
@@ -81,6 +138,18 @@
 | `git stash drop`           | Delete a stash manually                              |
 | `git format-patch`         | Create patch file from commits                       |
 
+::: tip
+Use `git stash` to temporarily save changes and switch context.
+:::
+
+::: note
+You can apply stash later using `git stash apply` or `git stash pop`.
+:::
+
+::: warning
+Stashes are local — they won't exist on other machines or teammates' setups.
+:::
+
 ---
 
 ### 👀 Inspection & History
@@ -95,6 +164,19 @@
 | `git shortlog -sne`               | Summary of commits by contributors                        |
 | `git log -p`                      | Show commit diffs inline                                  |
 | `git diff --staged`               | Show staged vs last commit                                |
+
+
+::: tip
+Use `git log --oneline --graph --all` to visualize complete commit tree.
+:::
+
+::: note
+`git blame <file>` shows who modified each line — useful for audits/debugging.
+:::
+
+::: warning
+Relying only on `git diff` might miss renamed/deleted files — use `--name-status`.
+:::
 
 ---
 
@@ -114,6 +196,19 @@
 > ```sh
 > git config --global alias.lg "log --oneline --graph --all"
 > ```
+
+
+::: tip
+Use `git config --global init.defaultBranch main` to avoid defaulting to `master`.
+:::
+
+::: note
+`git config --global user.name` and `user.email` must be set before committing.
+:::
+
+::: warning
+Avoid using `credential.helper store` on shared or production machines — it's insecure.
+:::
 
 ---
 
@@ -143,6 +238,19 @@
 | `git worktree add ../folder <branch>` | Create a new working directory tied to a different branch (parallel workspace) |
 | `git archive -o release.zip HEAD`     | Export current repo content as a `.zip` file (useful for releases/artifacts) |
 | `git log --graph --all --decorate`    | Visualize entire repo history (useful in teams and large repos) |
+
+
+::: tip
+Use `git worktree` to work on multiple branches without switching.
+:::
+
+::: note
+`git sparse-checkout` is helpful when working in a monorepo with many subfolders.
+:::
+
+::: warning
+Commands like `git filter-branch` and `git rebase -i` rewrite history — use them only on local or private branches.
+:::
 
 
 🔧 GitOps & CI/CD Relevance (Bonus for DevOps Interviews)
