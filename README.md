@@ -98,9 +98,6 @@ git stash                   # Save local changes temporarily
 git log --oneline --graph   # View compact commit history
 ```
 
-### 📄 Cheat Sheet
-Terraform [CLI Commands](./git/git-commands.md)
-
 ---
 
 ### 📚 Recommended Resources

@@ -52,5 +52,10 @@ git remote set-url origin https://github.com/username/new-repo-name.git
 | ------------------------- | ----------------------------------------- |
 | Delete repo on GitHub     | Go to repo → Settings → Delete repository |
 | Delete repo locally       | `rm -rf <repo-folder>`                    |
+| Remove Git tracking       | `rm -rf .git`                             |
 | Remove remote from local  | `git remote remove origin`                |
 | Reconnect to new repo URL | `git remote add origin <new-url>`         |
+
+
+> ⚠️ **Warning:** Use carefully — especially `rm -rf` as it cannot be undone. Double-check folder names and URLs before running commands.
+> Deleting the `.git` folder will permanently remove all Git history. It cannot be recovered without a backup. Use this command carefully!

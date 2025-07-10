@@ -1,6 +1,6 @@
 # 🚀 Repository Branch Reorganization: From Main to Feature and Master
 
-### 🔧 1. Convert main → feature Branch
+### 🔧 1. Convert main → Feature branch
 
 ```sh
 # Rename local branch from main to feature (new-branch)
@@ -18,7 +18,7 @@ git push origin --delete main
 
 ---
 
-### ✳️ 2. Create a Clean master Branch (as homepage)
+### ✳️ 2. Create a Clean master branch (as homepage)
 
 ```sh 
 # Create orphan branch (no history)
@@ -74,8 +74,8 @@ git branch -D branch-name     # Force delete
 ```sh
 git push origin --delete branch-name
 ```
-> 🛑 Can't delete remote default branch (like main) until default branch is changed on GitHub UI
-Fix: Go to GitHub → Repo → Settings → Branches → Change default → Then delete
+> 🛑 Can't delete remote default branch (like main) until default branch is changed on GitHub UI.
+> Fix: Go to GitHub → Repo → Settings → Branches → Change default → Then delete
 
 ---
 
