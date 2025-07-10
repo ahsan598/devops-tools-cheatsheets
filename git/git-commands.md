@@ -14,7 +14,7 @@
 
 
 
-> ⚠️ **Warning:** Avoid committing sensitive info (e.g., `.env`, secrets) — use `.gitignore`.
+> ⚠️ **Warning:** Avoid committing sensitive info (e.g., `.env`, secrets) — use [`.gitignore`](gitignore-guide.md).
 
 ---
 

@@ -1,9 +1,9 @@
 # 🧬 Git Cheatsheet
 
 ### 📖 What is Git?
-**Git is a distributed version control system used to track changes in source code during software development. It allows teams to collaborate, manage code history, switch between features using branches, and safely deploy changes.**
+Git is a distributed version control system used to track changes in source code during software development. It allows teams to collaborate, manage code history, switch between features using branches, and safely deploy changes.
 
-### Git is the backbone of platforms like GitHub, GitLab, Bitbucket, and widely used in DevOps, CI/CD, and cloud automation workflows.
+Git is the backbone of platforms like **GitHub, GitLab, Bitbucket**, and widely used in DevOps, CI/CD, and cloud automation workflows.
 
 
 ### 💡 🛠️ How to Install Git
@@ -21,14 +21,6 @@
 
 - Windows:
 👉 Download Git from [here](https://git-scm.com/downloads)
-
----
-
-### 📚 Recommended Resources
-- 📘 [Official Git Documentation](https://git-scm.com/doc)
-- 📖 [Pro Git Book (Free)](https://git-scm.com/book/en/v2)
-- 🎥 [Git & GitHub Crash Course (YouTube)](https://www.youtube.com/watch?v=RGOj5yH7evk)
-- 🧪 [Learn Git Branching (Interactive Visual Tool)](https://learngitbranching.js.org/)
 
 ---
 
@@ -77,13 +69,6 @@ Or open in GitHub → [Git CLI Commands](./git/git-commands.md)
 - **Cherry-pick, Reset, Revert:** Modify or undo commits
 - **Worktrees & Submodules:** Multi-branch and repo management
 
-
-### 📄 Cheat Sheet
-Terraform [CLI Commands](./git/git-commands.md)
-
-### 📚 Interview Prep
-[Common Git Interview Questions](./git/interview-questions.md)
-
 ---
 
 ### ❓ Frequently Asked Interview Questions
@@ -92,6 +77,10 @@ Terraform [CLI Commands](./git/git-commands.md)
 - How do you undo a pushed commit safely?
 - When to use `stash`, and how?
 - How does Git track changes in `.gitignore`?
+
+
+### 📚 Interview Prep
+[Common Git Interview Questions](./git/interview-questions.md)
 
 ---
 
@@ -108,3 +97,14 @@ git pull                    # Pull latest changes
 git stash                   # Save local changes temporarily
 git log --oneline --graph   # View compact commit history
 ```
+
+### 📄 Cheat Sheet
+Terraform [CLI Commands](./git/git-commands.md)
+
+---
+
+### 📚 Recommended Resources
+- 📘 [Official Git Documentation](https://git-scm.com/doc)
+- 📖 [Pro Git Book (Free)](https://git-scm.com/book/en/v2)
+- 🎥 [Git & GitHub Crash Course (YouTube)](https://www.youtube.com/watch?v=RGOj5yH7evk)
+- 🧪 [Learn Git Branching (Interactive Visual Tool)](https://learngitbranching.js.org/)
