@@ -75,7 +75,8 @@ git branch -D branch-name     # Force delete
 git push origin --delete branch-name
 ```
 > 🛑 Can't delete remote default branch (like main) until default branch is changed on GitHub UI.
-> Fix: Go to GitHub → Repo → Settings → Branches → Change default → Then delete
+> 
+> **Fix:** Go to GitHub → Repo → Settings → Branches → Change default → Then delete
 
 ---
 

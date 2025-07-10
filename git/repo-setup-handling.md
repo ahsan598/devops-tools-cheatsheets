@@ -58,4 +58,4 @@ git remote set-url origin https://github.com/username/new-repo-name.git
 
 
 > ⚠️ **Warning:** Use carefully — especially `rm -rf` as it cannot be undone. Double-check folder names and URLs before running commands.
-> Deleting the `.git` folder will permanently remove all Git history. It cannot be recovered without a backup. Use this command carefully!
+> Deleting the `.git` folder will permanently remove all Git history. It cannot be recovered without a backup.
