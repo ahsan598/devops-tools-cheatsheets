@@ -173,7 +173,7 @@
 
 > ⚠️ **Warning:** Commands like `git filter-branch` and `git rebase -i` rewrite history — use them only on local or private branches.
 
----
+
 
 🔧 GitOps & CI/CD Relevance (Bonus for DevOps Interviews)
 

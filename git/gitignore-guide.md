@@ -1,6 +1,6 @@
 # .gitignore Guide
 
-This document explains the purpose of the .gitignore file and what files/folders are ignored in this project.
+This document explains the purpose of the `.gitignore` file and what files/folders are ignored in this project.
 
 
 ### 🔍 What is .gitignore?
@@ -56,6 +56,6 @@ Thumbs.db
 ---
 
 ### ✅ Best Practices
-- Never commit passwords, secrets, or API keys—use .gitignore to exclude them.
-- Customize your .gitignore depending on your project's language or tools.
+- Never commit **passwords, secrets, or API** keys—use `.gitignore` to exclude them.
+- Customize your `.gitignore` depending on your project's language or tools.
 - Use [gitignore.io](https://www.toptal.com/developers/gitignore) to generate a custom `.gitignore` template.
