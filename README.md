@@ -1,7 +1,7 @@
 # 🛠️ DevOps Tools Cheat Sheets
 
 ### Welcome! 👋  
-This repository is a collection of simple and useful **DevOps cheat sheets** to help you:
+This repository is a collection of simple and useful **DevOps tools cheat sheets** to help you:
 
 - ✅ Prepare for interviews  
 - 🔁 Refresh your knowledge  
@@ -48,7 +48,7 @@ Inside each branch, you’ll find:
 - Copy/paste commands as needed
 - Use in interviews, on the job, or when learning DevOps tools
 
-> Tip: Star ⭐ this repo so you can find it easily later!
+> 💡 **Tip:** Star ⭐ this repo so you can find it easily later!
 
 ---
 
