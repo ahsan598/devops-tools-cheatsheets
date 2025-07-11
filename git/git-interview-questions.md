@@ -1,18 +1,16 @@
 # 🎯 Common Git Interview Questions (with Simple Answers & Examples)
 
-A beginner-friendly and interview-ready cheat sheet covering most frequently asked Git questions in DevOps, SRE, and software development interviews.
+### A beginner-friendly and interview-ready cheat sheet covering most frequently asked Git questions in DevOps, SRE, and software development interviews.
 
 ---
 
 ### 🔄 1. What is the difference between `git pull` and `git fetch`?
 
-| Command     | What It Does                       |
-| ----------- | ---------------------------------- |
-| `git fetch` | Downloads changes from remote but  |
-
-| **does not merge** into your branch |                                                                         |
+| Command                             | What It Does                                                            |
 | ----------------------------------- | ----------------------------------------------------------------------- |
+| `git fetch`                         | Downloads changes from remote but **does not merge** into your branch   | 
 | `git pull`                          | Downloads and **automatically merges** changes into your current branch |
+
 
 🧠 **Tip:** Use `fetch` when you want to review changes before merging.
 

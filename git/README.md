@@ -2,16 +2,18 @@
 
 This directory provides a beginner-to-advanced reference of essential **Git commands, workflows, and setup guides** — tailored for DevOps, DevSecOps, and interview preparation.
 
-📌 Use this as a quick-access resource while:
+### 📌 Use this as a quick-access resource while:
 - Working on CI/CD pipelines
 - Setting up Git remotes and branches
 - Troubleshooting Git issues
 - Preparing for Git-based technical interviews
 
+
 Each file is designed to be simple, practical, and beginner-friendly — with real-world usage in mind.
 
+---
 
-## 📂 Files in This Folder
+### 📂 Files in This Folder
 
 - [Git basic commands](./git-commands.md) – Core Git commands (CLI reference)
 - [Git Ignore Guide](./gitignore-guide.md) – When & how to use `.gitignore`

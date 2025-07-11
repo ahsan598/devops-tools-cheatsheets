@@ -4,7 +4,7 @@
 
 ---
 
-### 🧩 Advanced (Used in Teams / DevSecOps)
+### 🧩 Used in Teams / DevSecOps
 
 | Command                                          | What It Does                                     |
 | ------------------------------------------------ | -------------------------------------------------|
@@ -21,7 +21,7 @@
 
 ---
 
-### 🧩 Advanced / DevSecOps + GitOps Essentials
+### 🧩 DevSecOps + GitOps Essentials
 
 | Command                               | What It Does / Short Description                                |
 | ------------------------------------- | ----------------------------------------------------------------|
@@ -42,7 +42,7 @@
 
 ---
 
-### 🔧 GitOps & CI/CD Relevance (Bonus for DevOps Interviews)
+### 🔧 GitOps & CI/CD Relevance
 
 | Concept / Command              | Use Case / Why It’s Useful                                           |
 | ------------------------------ | ---------------------------------------------------------------------|
