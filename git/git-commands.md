@@ -13,7 +13,6 @@
 | `git diff`                    | See differences between changes                                   |
 
 
-
 > ⚠️ **Warning:** Avoid committing sensitive info (e.g., `.env`, secrets) — use [`.gitignore`](gitignore-guide.md).
 
 ---
@@ -52,7 +51,6 @@
 | `git remote prune origin`                   | Cleanup stale branches                               |
 
 
-
 > ⚠️ **Warning:** Don't force push (`--force`) unless you're 100% sure — it rewrites remote history.
 
 ---
@@ -73,7 +71,6 @@
 | `git restore <file>`                | (Newer syntax) Restore file to last commit state             |
 
 
-
 > ⚠️ **Warning:** `git reset --hard` is **dangerous**. Always warn that it discards local changes **permanently**.
 
 ---
@@ -90,7 +87,6 @@
 | `git stash pop`            | Apply and delete stash                               |
 | `git stash drop`           | Delete a stash manually                              |
 | `git format-patch`         | Create patch file from commits                       |
-
 
 
 > 💡 **Tip:** Use `git stash` to temporarily save changes and switch context.
@@ -150,12 +146,11 @@
 | `git archive -o out.zip HEAD`                    | Export current branch as zip archive                  |
 
 
-
 > 💡 **Tip:** `git bisect` is a power move in debugging. Definitely worth mastering.
 
 ---
 
-🧩 Advanced / DevSecOps + GitOps Essentials
+### 🧩 Advanced / DevSecOps + GitOps Essentials
 
 | Command                               | What It Does / Short Description                                |
 | ------------------------------------- | ----------------------------------------------------------------|
@@ -170,12 +165,12 @@
 
 
 > 💡 **Tip:** Use `git worktree` to work on multiple branches without switching.
-
+>
 > ⚠️ **Warning:** Commands like `git filter-branch` and `git rebase -i` rewrite history — use them only on local or private branches.
 
 
 
-🔧 GitOps & CI/CD Relevance (Bonus for DevOps Interviews)
+### 🔧 GitOps & CI/CD Relevance (Bonus for DevOps Interviews)
 
 | Concept / Command              | Use Case / Why It’s Useful                                           |
 | ------------------------------ | ---------------------------------------------------------------------|
@@ -199,7 +194,6 @@
 | `.gitignore vs .gitkeep`                        | Ignore files vs keep empty folders                |
 | `how to undo pushed commit safely?`             | `git revert`, not `reset --hard`                  |
 | `tracking branch`                               | Local branch linked to remote (upstream)          |
-
 
 
 > 📝 **Note:** "`Rebase` rewrites history and should not be used on shared branches unless you know what you're doing."
