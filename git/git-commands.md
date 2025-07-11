@@ -1,3 +1,20 @@
+## 📚 Table of Contents
+
+- [Basic Git Commands](#basic-git-commands)
+- [Branching and Merging](#branching-and-merging)
+- [Remote Repositories](#remote-repositories)
+- [Undo and Cleanup](#undo-and-cleanup)
+- [Stash and Patch](#stash-and-patch)
+- [Inspection and History](#inspection-and-history)
+- [Configuration and Setup](#configuration-and-setup)
+- [Advanced Commands (Teams/DevSecOps)](#advanced-commands-teamsdevsecops)
+- [Advanced / DevSecOps + GitOps Essentials](#advanced--devsecops--gitops-essentials)
+- [GitOps & CI/CD Relevance](#gitops--cicd-relevance)
+- [Git Interview Tips](#git-interview-tips)
+
+
+---
+
 ### ✅ Basic Git Commands
 
 | Command                        | What It Does                                                     |
@@ -10,7 +27,7 @@
 | `git commit -m "message"`     | Save changes with a message                                       |
 | `git log`                     | Show commit history                                               |
 | `git log --oneline --graph`   | Compact graphical log (great for quick view)                      |
-| `git diff`                    | See differences between changes                                   |
+| `git diff`                    | See differences between changes not yet staged (not stagged)      |
 
 
 > ⚠️ **Warning:** Avoid committing sensitive info (e.g., `.env`, secrets) — use [`.gitignore`](gitignore-guide.md).
@@ -32,6 +49,7 @@
 | `git branch -D <name>`                   | Force delete branch (even if not merged)                   |
 | `git rebase <branch>`                    | Reapply commits from current branch onto target branch     |
 | `git cherry-pick <commit>`               | Apply a specific commit from another branch                |
+| `git commit --no-edit`                   | Skip commit message during rebase or merge.                |
 
 
 ---
@@ -61,6 +79,7 @@
 | ----------------------------------- | -------------------------------------------------------------|
 | `git reset <file>`                  | Unstage a staged file                                        |
 | `git restore --staged <file>`       | Also unstages                                                |
+| `git reset HEAD^`                   | Useful to undo a wrong commit                                |
 | `git reset --soft HEAD~1`           | Undo last commit, keep changes staged                        |
 | `git reset --mixed HEAD~1`          | Undo last commit, unstage changes                            |
 | `git reset --hard HEAD~1`           | Completely undo last commit and discard changes              |
@@ -80,6 +99,7 @@
 | Command                    | What It Does                                         |
 | -------------------------- | -----------------------------------------------------|
 | `git stash`                | Save uncommitted changes temporarily                 |
+| `git stash clear`          | Clear all stashes                                    |
 | `git stash save "message"` | For clarity when using multiple stashes              |
 | `git stash  branch <name>` | Create and switch to a branch from stash             |
 | `git stash list`           | List saved stashes                                   |
@@ -123,12 +143,6 @@
 | `git config --global init.defaultBranch main`| Set default branch name to main when initializing new repositories |
 
 
-> Ex: Custom command aliases example
-> ```sh
-> git config --global alias.lg "log --oneline --graph --all"
-> ```
-
-
 > 💡 **Tip:** Use `git config --global init.defaultBranch main` to avoid defaulting to `master`.
 
 
@@ -162,6 +176,7 @@
 | `git worktree add ../folder <branch>` | Create a new working directory tied to a different branch (parallel workspace) |
 | `git archive -o release.zip HEAD`     | Export current repo content as a `.zip` file (useful for releases/artifacts) |
 | `git log --graph --all --decorate`    | Visualize entire repo history (useful in teams and large repos) |
+| `git pull --rebase`                   | Preferred for linear history in teams.                          |
 
 
 > 💡 **Tip:** Use `git worktree` to work on multiple branches without switching.
@@ -178,8 +193,46 @@
 | `git tag <v1.0.0>`             | Mark a commit for a release; used in CI/CD pipelines                 |
 | `git push origin --tags`       | Push all tags to remote (so CI/CD can trigger from them)             |
 | `git checkout <tag>`           | Checkout a specific release state                                    |
+| `git tag -d <tag>`             | Useful for deleting remote tags.                                     |
+| `git push origin :refs/tags/<tag>`| Useful for deleting remote tags.                                  |
 | `git diff <commit1> <commit2>` | Compare environments or code before/after deployment                 |
 
+
+---
+
+### 🛠️ Command Examples or Use Cases
+
+- Rollback latest commit but keep changes:
+  ```sh
+  git reset --soft HEAD~1
+
+- Custom command aliases example
+  ```sh
+  git config --global alias.lg "log --oneline --graph --all"
+  ```
+
+- Rename last commit:
+  ```sh
+  git commit --amend -m "New Message"
+  ```
+
+- Delete remote branch:
+  ```sh
+  git push origin --delete <branch-name>
+  ```
+
+---
+
+### ✅ Pro Tip: Use Aliases for Speed
+Consider adding a section for DevOps alias shortcuts:
+
+```sh
+git config --global alias.cm "commit -m"
+git config --global alias.co "checkout"
+git config --global alias.br "branch"
+git config --global alias.st "status"
+git config --global alias.last "log -1 HEAD"
+```
 
 ---
 

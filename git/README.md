@@ -9,7 +9,6 @@ This folder contains a simple reference to commonly used **Git** commands, usefu
 
 - `git-commands`: All necessary basic Git commands
 - `interview-questions`: Frequently asked GIT questions
-- `repo-setup-handling`: Helps you create your first repo locally or remotely
 - `gitignore-guide`: Helps you understand how and why to use a `.gitignore` file in a project.
 
 
