@@ -1,4 +1,4 @@
-# 🚀 Repository Branch Reorganization: From Main to Feature and Master
+## 🚀 Repository Branch Reorganization: From Main to Feature and Master
 
 ### 🔧 1. Convert main → Feature branch
 
@@ -21,38 +21,26 @@ git push origin --delete main
 ### ✳️ 2. Create a Clean master branch (as homepage)
 
 ```sh 
-# Create orphan branch (no history)
+# Create a clean homepage branch (no history)
 git checkout --orphan master
 
 # Remove all files from index
 git rm -rf .
 
 # Add clean README.md
-echo "# DevOps Cheatsheets" > README.md
-echo "This repository contains cheatsheets for various DevOps tools." >> README.md
+echo "# DevOps Cheatsheet" > README.md
+echo "This repository contains cheatsheet for various DevOps tools." >> README.md
 echo "## Branches" >> README.md
-echo "- **terraform**: Terraform automation and commands" >> README.md
-echo "- **git**: Git commands and tips" >> README.md
 
 # Commit and push
 git add README.md
 git commit -m "Initial master branch with project overview"
 git push origin master
 ```
+
 ---
 
-### ➕ 3. Create More Tool-Specific Branches (Optional)
-```sh
-git checkout master
-git checkout -b git
-mkdir Git
-# Add README.md
-git add Git/
-git commit -m "Added Git cheatsheet structure"
-git push -u origin git
-```
-
-### 🔁 Sync
+### 🔁 3. Sync & Delete Branches
 
 - Pull Latest Changes
 ```sh
@@ -74,13 +62,16 @@ git branch -D branch-name     # Force delete
 ```sh
 git push origin --delete branch-name
 ```
+
 > 🛑 Can't delete remote default branch (like main) until default branch is changed on GitHub UI.
 > 
 > **Fix:** Go to GitHub → Repo → Settings → Branches → Change default → Then delete
 
+
 ---
 
 ### ✅ 4. Final Verification
+
 - List Remote Branches
 ```sh
 git ls-remote --heads origin
@@ -89,8 +80,9 @@ git ls-remote --heads origin
 - Remote-Tracking Branches
 ```sh
 git branch -r
-git branch -a   [All branches (local + remote)]
+git branch -a           # Show all branches (local + remote)
 ```
+
 ---
 
 ### 🧹 5. Fix: Remove that stale origin/main reference locally

@@ -1,4 +1,4 @@
-# 🧬 Git Cheatsheet
+# 🧬 Git Reference Section
 
 ### 📖 What is Git?
 Git is a distributed version control system used to track changes in source code during software development. It allows teams to collaborate, manage code history, switch between features using branches, and safely deploy changes.
@@ -26,11 +26,15 @@ Git is the backbone of platforms like **GitHub, GitLab, Bitbucket**, and widely 
 
 ### 📦 What's in This Cheatsheet?
 
-| File                          | Purpose                                    |
-|-------------------------------|--------------------------------------------|
-| `Git/git-commands.md`         | Git CLI commands (basic to advanced)       |
-| `Git/interview-questions.md`  | Git interview questions and scenarios      |
-| `Git/README.md`               | This file – overview and usage             |
+| File                              | Purpose                                                           |
+| --------------------------------- | ----------------------------------------------------------------- |
+| `Git/git-commands.md`             | Git CLI commands (basic to intermediate)                          |
+| `Git/interview-questions.md`      | Common Git interview questions and real-world scenarios           |
+| `Git/gitignore-guide.md`          | How and why to use a `.gitignore` file in a project               |
+| `Git/gitkeep-guide.md`            | How and why to use a `.gitkeep` file to track empty folders       |
+| `Git/repo-setup-and-remotes.md`   | Configure and manage Git remotes during repo setup or rename      |
+| `Git/branch-restructure-guide.md` | Reorganize branches: convert `main` to `feature`, create `master` |
+
 
 ---
 
@@ -49,12 +53,12 @@ Clone the repo and switch to this branch:
 
 ```sh
 git clone https://github.com/ahsan598/devops-tools-cheatsheets.git
-cd devops-tools-cheatsheets
+cd devops-tools-cheatsheet
 git checkout git
 ```
 View Git command reference:
 ```sh
-cat git/git-commands.md
+cat Git/git-commands.md
 ```
 
 Or open in GitHub → [Git CLI Commands](./git/git-commands.md)
@@ -68,6 +72,7 @@ Or open in GitHub → [Git CLI Commands](./git/git-commands.md)
 - **Stash & Rebase:** For temporary changes and cleaner history
 - **Cherry-pick, Reset, Revert:** Modify or undo commits
 - **Worktrees & Submodules:** Multi-branch and repo management
+
 
 ---
 

@@ -1,9 +1,9 @@
-# .gitignore Guide
+# `.gitignore` Guide
 
 This document explains the purpose of the `.gitignore` file and what files/folders are ignored in this project.
 
 
-### 🔍 What is .gitignore?
+### 🔍 What is `.gitignore`?
 The `.gitignore` file tells Git which files or folders not to track or commit to the repository.
 
 **This is useful for:**
@@ -27,7 +27,7 @@ Here are some examples of what we typically ignore:
 
 ---
 
-### 🧾 Example .gitignore File
+### 🧾 Example `.gitignore` File
 
 ```sh
 # Dependency directories

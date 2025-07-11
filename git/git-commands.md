@@ -1,21 +1,10 @@
-## 📚 Table of Contents
+# 🟢 Git Basic & Intermediate Commands
 
-- [Basic Git Commands](#basic-git-commands)
-- [Branching and Merging](#branching-and-merging)
-- [Remote Repositories](#remote-repositories)
-- [Undo and Cleanup](#undo-and-cleanup)
-- [Stash and Patch](#stash-and-patch)
-- [Inspection and History](#inspection-and-history)
-- [Configuration and Setup](#configuration-and-setup)
-- [Advanced Commands (Teams/DevSecOps)](#advanced-commands-teamsdevsecops)
-- [Advanced / DevSecOps + GitOps Essentials](#advanced--devsecops--gitops-essentials)
-- [GitOps & CI/CD Relevance](#gitops--cicd-relevance)
-- [Git Interview Tips](#git-interview-tips)
-
+### This file contains essential basic to intermediate Git commands, ideal for learning, practicing, and interview preparation.
 
 ---
 
-### ✅ Basic Git Commands
+### Basic Commands
 
 | Command                        | What It Does                                                     |
 | ----------------------------- | ------------------------------------------------------------------|
@@ -25,6 +14,7 @@
 | `git add <file>`              | Stage a specific file for commit                                  |
 | `git add .`                   | Stage all changed files                                           |
 | `git commit -m "message"`     | Save changes with a message                                       |
+| `git help`                    | Show Git help manual                                              |
 | `git log`                     | Show commit history                                               |
 | `git log --oneline --graph`   | Compact graphical log (great for quick view)                      |
 | `git diff`                    | See differences between changes not yet staged (not stagged)      |
@@ -145,58 +135,29 @@
 
 > 💡 **Tip:** Use `git config --global init.defaultBranch main` to avoid defaulting to `master`.
 
-
 ---
 
-### 🧩 Advanced (Used in Teams / DevSecOps)
+### 🧭 Git Tracking & File State Commands
 
-| Command                                          | What It Does                                     |
-| ------------------------------------------------ | -------------------------------------------------|
-| `git worktree add ../new-folder <branch>`        | Use multiple working trees for different branches     |
-| `git filter-branch --force ...`                  | Remove files from Git history (e.g., secrets)         |
-| `git bisect`                                     | Find commit that introduced a bug                     |
-| `git submodule add <repo>`                       | Add repo as a submodule                               |
-| `git tag <name>`                                 | Tag a specific commit (e.g., v1.0.0)                  |
-| `git archive -o out.zip HEAD`                    | Export current branch as zip archive                  |
-
-
-> 💡 **Tip:** `git bisect` is a power move in debugging. Definitely worth mastering.
-
----
-
-### 🧩 Advanced / DevSecOps + GitOps Essentials
-
-| Command                               | What It Does / Short Description                                |
-| ------------------------------------- | ----------------------------------------------------------------|
-| `git sparse-checkout init` + `set`    | Checkout only specific folders from a large repo (great for monorepos) |
-| `git fsck`                            | Check repo for corruption and dangling commits                  |
-| `git gc`                              | Clean up unnecessary files and optimize the local repository    |
-| `git revert HEAD~2..HEAD`             | Revert a **range** of commits (last 2 commits in this example)  |
-| `git rebase -i HEAD~3`                | Interactive rebase: squash, reorder, or edit last 3 commits     |
-| `git worktree add ../folder <branch>` | Create a new working directory tied to a different branch (parallel workspace) |
-| `git archive -o release.zip HEAD`     | Export current repo content as a `.zip` file (useful for releases/artifacts) |
-| `git log --graph --all --decorate`    | Visualize entire repo history (useful in teams and large repos) |
-| `git pull --rebase`                   | Preferred for linear history in teams.                          |
-
-
-> 💡 **Tip:** Use `git worktree` to work on multiple branches without switching.
->
-> ⚠️ **Warning:** Commands like `git filter-branch` and `git rebase -i` rewrite history — use them only on local or private branches.
-
-
-
-### 🔧 GitOps & CI/CD Relevance (Bonus for DevOps Interviews)
-
-| Concept / Command              | Use Case / Why It’s Useful                                           |
-| ------------------------------ | ---------------------------------------------------------------------|
-| GitOps                         | Git as the **single source of truth** for infrastructure (IaC) and deployments |
-| `git tag <v1.0.0>`             | Mark a commit for a release; used in CI/CD pipelines                 |
-| `git push origin --tags`       | Push all tags to remote (so CI/CD can trigger from them)             |
-| `git checkout <tag>`           | Checkout a specific release state                                    |
-| `git tag -d <tag>`             | Useful for deleting remote tags.                                     |
-| `git push origin :refs/tags/<tag>`| Useful for deleting remote tags.                                  |
-| `git diff <commit1> <commit2>` | Compare environments or code before/after deployment                 |
-
+| Command                             | What It Does                                                  |
+|-------------------------------------|---------------------------------------------------------------|
+| `git status`                        | Shows tracked, untracked, staged, and modified files          |
+| `git add <file>`                    | Start tracking a new or modified file                         |
+| `git add .`                         | Stage all changes (new/modified files)                        |
+| `git restore <file>`                | Restore file to last committed state (unstage or discard changes)  |
+| `git restore --staged <file>`       | Unstage a file while keeping changes                          |
+| `git rm --cached <file>`            | Remove file from Git tracking but keep it in working directory     |
+| `git ls-files`                      | List all tracked files                                        |
+| `git check-ignore -v <file>`        | Show which rule in `.gitignore` is causing the file to be ignored  |
+| `git clean -fd`                     | Remove untracked files and directories                        |
+| `git diff`                          | See unstaged changes between working dir and index            |
+| `git diff --staged`                 | See staged changes (index vs last commit)                     |
+| `git commit -am "msg"`              | Stage and commit tracked files only (skips new untracked files)    |
+| `git log --name-status`             | Show commit logs with list of changed files                   |
+| `git log --stat`                    | Show commit summary with number of lines added/removed per file    |
+| `git blame <file>`                  | Show line-by-line last commit + author info                   |
+| `git ls-tree -r HEAD`               | List all files in the current commit/tree                     |
+| `git show <commit>:<file>`          | Show a file’s content from specific commit                    |
 
 ---
 

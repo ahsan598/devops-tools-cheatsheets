@@ -2,17 +2,25 @@
 
 ### 🔁 When Repository Name or Remote URL Changes
 
-| 🔧 Command                            | 💬 What It Does                                               |
-| ------------------------------------- | ------------------------------------------------------------- |
+| 🔧 Command                            | 💬 What It Does                                              |
+| --------------------------------------| ------------------------------------------------------------- |
 | `git remote -v`                       | Check current remote URL (origin)                             |
 | `git remote set-url origin <new-url>` | Update the remote URL after repo name or host changes         |
 | `git remote get-url origin`           | Verify that the remote URL was updated correctly              |
 | `git push -u origin <branch>`         | Set upstream again (optional if push fails due to URL change) |
+| `git remote rename origin upstream`   | Rename existing remote (e.g., origin → upstream) |
 
 
-#### Example (after renaming repo on GitHub):
+### Examples:
+
+- Renaming repo on GitHub:
 ```sh
 git remote set-url origin https://github.com/username/new-repo-name.git
+```
+- Verifying the remote repo after rename:
+
+```sh
+git remote show origin
 ```
 
 ---
@@ -45,8 +53,9 @@ git remote set-url origin https://github.com/username/new-repo-name.git
 - Use `git remote rename <old> <new>` if origin name needs to change (rare).
 - Use `git remote remove origin` and `add` again if it gets corrupted.
 
+---
 
-### ❌🗑️ How to Delete the Repo
+# ❌🗑️ How to Delete the Repo
 
 | Action                    | Command / Steps                           |
 | ------------------------- | ----------------------------------------- |
@@ -58,4 +67,5 @@ git remote set-url origin https://github.com/username/new-repo-name.git
 
 
 > ⚠️ **Warning:** Use carefully — especially `rm -rf` as it cannot be undone. Double-check folder names and URLs before running commands.
+> 
 > Deleting the `.git` folder will permanently remove all Git history. It cannot be recovered without a backup.
