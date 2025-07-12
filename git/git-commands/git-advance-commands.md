@@ -55,8 +55,6 @@
 | `git diff <commit1> <commit2>` | Compare environments or code before/after deployment                 |
 
 
----
-
 
 ### 🔧 Repository Plumbing (Low-level Internal Commands)
 
@@ -76,7 +74,7 @@
 | `git prune`       | Remove unreachable objects                                      |
 | `git verify-pack` | Verify contents of pack files                                   |
 
----
+
 
 ### 🗃️ Index & Working Directory Management
 
@@ -117,7 +115,7 @@
 | `git mergetool`              | Open configured merge tool                                   |
 | `git rebase`                 | Reapply commits on another base commit *(from earlier list)* |
 
----
+
 
 ### 🧾 Log Customization & History Exploration
 
@@ -178,7 +176,6 @@
 | `git config --local core.hooksPath` | Set custom path for Git hooks         |
 
 
----
 
 ### 📤 Push, Pull, & Syncing with Remotes
 

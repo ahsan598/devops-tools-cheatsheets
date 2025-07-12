@@ -1,15 +1,12 @@
-# 🎯 Common Git Interview Questions (with Simple Answers & Examples)
+# 🎯 Common Git Interview Questions
 
-### A beginner-friendly and interview-ready cheat sheet covering most frequently asked Git questions in DevOps, SRE, and software development interviews.
-
----
 
 ### 🔄 1. What is the difference between `git pull` and `git fetch`?
 
-| Command                             | What It Does                                                            |
-| ----------------------------------- | ----------------------------------------------------------------------- |
-| `git fetch`                         | Downloads changes from remote but **does not merge** into your branch   | 
-| `git pull`                          | Downloads and **automatically merges** changes into your current branch |
+| Command                  | What It Does                                                            |
+| -------------------------| ----------------------------------------------------------------------- |
+| `git fetch`              | Downloads changes from remote but **does not merge** into your branch   | 
+| `git pull`               | Downloads and **automatically merges** changes into your current branch |
 
 
 🧠 **Tip:** Use `fetch` when you want to review changes before merging.
@@ -218,7 +215,218 @@ Avoid `git reset` if commit is already pushed.
 | `.gitignore` | Tells Git which files/folders to skip                              |
 | `.gitkeep`   | Dummy file to keep empty folders (Git doesn’t track empty folders) |
 
+
 ---
+
+## 🔹 1. You made changes in a file but don’t want to commit them now. What will you do?
+
+**Answer:**
+Use `git stash` to save the changes temporarily.
+```bash
+git stash
+```
+You can reapply it later using:
+```bash
+git stash apply
+```
+
+---
+
+## 🔹 2. You committed to the wrong branch by mistake. How to fix it?
+
+**Answer:**
+```bash
+# Save the changes in a new branch
+git checkout -b correct-branch
+# (Your commit is here now)
+
+# Go back and remove commit from wrong branch
+git checkout wrong-branch
+git reset --hard HEAD~1
+```
+
+---
+
+## 🔹 3. You want to undo the last commit but keep the changes in the working directory?
+
+**Answer:**
+```bash
+git reset --soft HEAD~1
+```
+
+---
+
+## 🔹 4. How to resolve a merge conflict?
+
+**Answer:**
+- Git will mark conflicting areas with `<<<<<<<`, `=======`, and `>>>>>>>`.
+- Open the file, manually fix the conflict.
+- After fixing:
+```bash
+git add <filename>
+git commit
+```
+
+---
+
+## 🔹 5. Difference between `git pull` and `git fetch`?
+
+**Answer:**
+- `git fetch`: downloads changes from remote but doesn’t merge.
+- `git pull`: fetches + merges changes automatically.
+
+---
+
+## 🔹 6. You accidentally deleted a branch. Can you recover it?
+
+**Answer:**
+```bash
+git reflog
+# Find the commit hash
+git checkout -b branch-name <commit-hash>
+```
+
+---
+
+## 🔹 7. How do you check who made changes to a specific line in a file?
+
+**Answer:**
+```bash
+git blame <filename>
+```
+
+---
+
+## 🔹 8. What is detached HEAD? How to come out of it?
+
+**Answer:**
+Detached HEAD occurs when you're not on a branch (e.g., checked out a commit directly).  
+To fix:
+```bash
+git checkout main
+```
+
+---
+
+## 🔹 9. How to delete a remote branch?
+
+**Answer:**
+```bash
+git push origin --delete branch-name
+```
+
+---
+
+## 🔹 10. How to revert a commit that is already pushed?
+
+**Answer:**
+```bash
+git revert <commit-hash>
+# creates a new commit that undoes changes
+```
+
+---
+
+## 🔹 11. How to clone a specific branch only?
+
+**Answer:**
+```bash
+git clone -b branch-name --single-branch <repo-url>
+```
+
+---
+
+## 🔹 12. You want to move only one file from one branch to another. How?
+
+**Answer:**
+```bash
+git checkout source-branch -- path/to/file
+```
+
+---
+
+## 🔹 13. How to see the commit history in a simple format?
+
+**Answer:**
+```bash
+git log --oneline --graph --all
+```
+
+---
+
+## 🔹 14. How do you squash multiple commits into one?
+
+**Answer:**
+```bash
+git rebase -i HEAD~<number-of-commits>
+# Mark commits as "squash" or "s"
+```
+
+---
+
+## 🔹 15. What is the difference between `git reset`, `git revert`, and `git checkout`?
+
+**Answer:**
+
+| Command        | Use Case                                 |
+|----------------|-------------------------------------------|
+| `git reset`    | Move HEAD to previous commit (history rewrite) |
+| `git revert`   | Creates a new commit that undoes previous one |
+| `git checkout` | Switch branches or restore files          |
+
+---
+
+## 🔹 16. How to track a remote branch locally?
+
+**Answer:**
+```bash
+git checkout --track origin/branch-name
+```
+
+---
+
+## 🔹 17. What’s the difference between `origin/master` and `master`?
+
+**Answer:**
+- `master`: local branch.
+- `origin/master`: remote-tracking branch (not yet fetched).
+
+---
+
+## 🔹 18. How to push code to a new repo for the first time?
+
+**Answer:**
+```bash
+git remote add origin <repo-url>
+git branch -M main
+git push -u origin main
+```
+
+---
+
+## 🔹 19. You want to remove a file from Git but not from your system?
+
+**Answer:**
+```bash
+git rm --cached filename
+```
+
+---
+
+## 🔹 20. How to apply only specific stashed changes?
+
+**Answer:**
+```bash
+git stash show -p stash@{0} | git apply -R
+```
+
+---
+
+✅ **Tip:** Always double-check before using `reset --hard` or `force push`.
+
+
+---
+
 
 ### 🎓 Summary Tips for Interviews:
 
@@ -226,8 +434,4 @@ Avoid `git reset` if commit is already pushed.
 - Be clear on how Git works behind the scenes
 - Know `merge`, `rebase`, `revert`, `reset`, `stash` and `cherry-pick`
 - Understand `.git`, `HEAD`, and GitOps concept for DevOps roles
-
----
-
-**🧠 Bookmark this for interview revision and daily Git refresh!**
 

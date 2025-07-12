@@ -28,8 +28,8 @@ Git is the backbone of platforms like **GitHub, GitLab, Bitbucket**, and widely 
 
 | File                              | Purpose                                                           |
 | --------------------------------- | ----------------------------------------------------------------- |
-| `Git/git-commands.md`             | Git CLI commands (basic to intermediate)                          |
-| `Git/interview-questions.md`      | Common Git interview questions and real-world scenarios           |
+| `Git/git-commands/`               | Git CLI commands (basic to intermediate)                          |
+| `Git/interview-qa/`               | Common Git interview questions and real-world scenarios           |
 | `Git/gitignore-guide.md`          | How and why to use a `.gitignore` file in a project               |
 | `Git/gitkeep-guide.md`            | How and why to use a `.gitkeep` file to track empty folders       |
 | `Git/repo-setup-and-remotes.md`   | Configure and manage Git remotes during repo setup or rename      |
@@ -49,19 +49,17 @@ Git is the backbone of platforms like **GitHub, GitLab, Bitbucket**, and widely 
 
 ### 🚀 Quick Start (Core Workflow)
 
-Clone the repo and switch to this branch:
+- Clone the repo and switch to this branch:
 
 ```sh
 git clone https://github.com/ahsan598/devops-tools-cheatsheets.git
 cd devops-tools-cheatsheet
 git checkout git
 ```
-View Git command reference:
+- View Git command reference:
 ```sh
 cat Git/git-commands.md
 ```
-
-Or open in GitHub → [Git CLI Commands](./git/git-commands.md)
 
 ---
 
@@ -85,7 +83,7 @@ Or open in GitHub → [Git CLI Commands](./git/git-commands.md)
 
 
 ### 📚 Interview Prep
-[Common Git Interview Questions](./git/interview-questions.md)
+[Common Git Interview Questions](./git/interview-qa/git-interview-questions.md)
 
 ---
 
@@ -102,6 +100,8 @@ git pull                    # Pull latest changes
 git stash                   # Save local changes temporarily
 git log --oneline --graph   # View compact commit history
 ```
+
+Or open in GitHub → [Git CLI Commands](./git/git-commands/git-basic-commands.md)
 
 ---
 

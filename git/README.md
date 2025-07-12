@@ -20,5 +20,5 @@ Each file is designed to be simple, practical, and beginner-friendly — with re
 - [Git Keep Guide](./gitkeep-guide.md) – Keep empty folders in Git
 - [Quick Repo Setup Guide](./repo-setup-and-remotes.md) – Remote config & repo linking
 - [Branch Restructure Guide](./branch-restructure-guide.md) – Reorganizing main/feature/master branches
-- [Interview Questions](./git-interview-questions.md) – Git interview Q&A with real-world context
+- [Interview Questions](./interview-qa/git-interview-questions.md) – Git interview Q&A with real-world context
 - [Git Advance commands](./advance-commands/git-advance-commands.md) – advanced git reference
