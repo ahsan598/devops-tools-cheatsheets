@@ -58,106 +58,166 @@
 ---
 
 
-### Plumbing:
+### 🔧 Repository Plumbing (Low-level Internal Commands)
 
-| Command                            | Explanation                                                                |
-|------------------------------------|----------------------------------------------------------------------------|
-| `git cat-file`                     | Show type, size, and content of Git objects                                |
-| `git checkout-index`               | Restore files from index to working directory                              |
-| `git commit-tree`                  | Create commit object manually (used internally or in scripting)            |
-| `git diff-tree`                    | Show differences between two trees (commits)                               |
-| `git for-each-ref`                 | Iterate over refs with custom format output                                |
-| `git hash-object`                  | Hash a file and optionally write to Git database                           |
-| `git ls-files`                     | Show all tracked files in index                                            |
-| `git ls-remote`                    | List references in a remote repository                                     |
-| `git merge-tree`                   | Show what a merge would look like                                          |
-| `git read-tree`                    | Load tree into the staging area                                            |
-| `git rev-parse`                    | Convert ref/branch/tag into SHA or parse arguments                         |
-| `git show-branch`                  | Show branches and their commits                                            |
-| `git show-ref`                     | List all references                                                        |
-| `git symbolic-ref`                 | Read or modify symbolic refs like HEAD                                     |
-| `git tag --list`                   | List all tags                                                              |
-| `git update-ref`                   | Update ref files directly                                                  |
+| Command           | Explanation                                                     |
+| ----------------- | --------------------------------------------------------------- |
+| `git cat-file`    | Show type, size, and content of Git objects                     |
+| `git commit-tree` | Create commit object manually (used internally or in scripting) |
+| `git diff-tree`   | Show differences between two trees (commits)                    |
+| `git hash-object` | Hash a file and optionally write to Git database                |
+| `git merge-tree`  | Show what a merge would look like                               |
+| `git worktree`    | Manage multiple working directories for branches                |
+| `git read-tree`   | Load tree into the staging area                                 |
+| `git update-ref`  | Update ref files directly                                       |
+| `git rev-parse`   | Convert ref/branch/tag into SHA or parse arguments              |
+| `git fsck`        | Verify connectivity and validity of Git objects                 |
+| `git gc`          | Cleanup unnecessary files to optimize repository                |
+| `git prune`       | Remove unreachable objects                                      |
+| `git verify-pack` | Verify contents of pack files                                   |
 
 ---
 
-### Porcelain:
+### 🗃️ Index & Working Directory Management
 
-| Command                            | Explanation                                                                |
-|------------------------------------|----------------------------------------------------------------------------|
-| `git blame`                        | Show who changed each line of a file and when                              |
-| `git bisect`                       | Binary search to find commit that introduced a bug                         |
-| `git checkout`                     | Switch branches or restore files                                           |
-| `git commit`                       | Commit staged changes                                                      |
-| `git diff`                         | Show file changes                                                          |
-| `git fetch`                        | Download objects and refs from remote                                      |
-| `git grep`                         | Search working directory or history for lines matching a pattern           |
-| `git log`                          | View commit history                                                        |
-| `git merge`                        | Combine another branch into current one                                    |
-| `git push`                         | Upload local commits to remote                                             |
-| `git rebase`                       | Reapply commits on another base commit                                     |
-| `git reset`                        | Reset index and/or working tree                                            |
-| `git show`                         | Display objects like commits, tags, or files                               |
-| `git tag`                          | Create or list tags                                                        |
+| Command              | Explanation                                   |
+| -------------------- | --------------------------------------------- |
+| `git checkout-index` | Restore files from index to working directory |
+| `git ls-files`       | Show all tracked files in index               |
 
 
-### Alias:
-| `git config --global alias.*`      | Create short aliases for Git commands                                      |
+### 🔗 References & Refs Handling
+
+| Command            | Explanation                                 |
+| ------------------ | ------------------------------------------- |
+| `git for-each-ref` | Iterate over refs with custom format output |
+| `git ls-remote`    | List references in a remote repository      |
+| `git show-ref`     | List all references                         |
+| `git symbolic-ref` | Read or modify symbolic refs like HEAD      |
+| `git show-branch`  | Show branches and their commits             |
+| `git show-ref --heads` | List all branch refs |
+| `git show-ref --tags`  | List all tag refs    |
 
 
-### Hook:
-| `git config --local core.hooksPath`| Set custom path for Git hooks                                              |
+
+### 🌳 Branching, Merging, History – Porcelain Commands
+
+| Command        | Explanation                                                       |
+| -------------- | ----------------------------------------------------------------- |
+| `git branch`   | *(implicit in other commands, not listed above but usually here)* |
+| `git checkout` | Switch branches or restore files                                  |
+| `git commit`   | Commit staged changes                                             |
+| `git merge`    | Combine another branch into current one                           |
+| `git rebase`   | Reapply commits on another base commit                            |
+| `git reset`    | Reset index and/or working tree                                   |
+| `git cherry-pick --upstream` | Apply commit from another branch with upstream awareness     |
+| `git merge-ours`             | Use ‘ours’ strategy to resolve conflicts                     |
+| `git merge-recursive`        | Merge strategy for multiple branches                         |
+| `git merge-subtree`          | Merge external repositories as subtrees                      |
+| `git mergetool`              | Open configured merge tool                                   |
+| `git rebase`                 | Reapply commits on another base commit *(from earlier list)* |
+
+---
+
+### 🧾 Log Customization & History Exploration
+
+| Command                   | Explanation                                        |
+| ------------------------- | -------------------------------------------------- |
+| `git log`                 | View commit history                                |
+| `git blame`               | Show who changed each line of a file and when      |
+| `git show`                | Display objects like commits, tags, or files       |
+| `git bisect`              | Binary search to find commit that introduced a bug |
+| `git diff`                | Show file changes                                  |
+| `git log --oneline`       | Show compact one-line-per-commit log               |
+| `git log --stat`          | Show changes per commit                            |
+| `git log --merges`        | Show only merge commits                            |
+| `git log --pretty=`       | Customize log formatting                           |
+| `git log --short-commit`  | Show brief commit hash + message                   |
+| `git log --topo-order`    | Show topologically ordered commits                 |
+| `git reflog`              | Show reference history including deleted commits   |
+| `git describe`            | Name a commit using nearest tag + distance         |
+
+
+
+### 🌐 Remote Interactions
+
+| Command         | Explanation                            |
+| --------------- | -------------------------------------- |
+| `git fetch`     | Download objects and refs from remote  |
+| `git push`      | Upload local commits to remote         |
+| `git ls-remote` | List references in a remote repository |
+
+
+### 🔍 Searching
+
+| Command    | Explanation                                                      |
+| ---------- | ---------------------------------------------------------------- |
+| `git grep` | Search working directory or history for lines matching a pattern |
+
+
+### 🏷️ Tags Management
+
+| Command                  | Explanation                    |
+| ------------------------ | ------------------------------ |
+| `git tag`                | Create or list tags            |
+| `git tag --list`         | *(from earlier)* List all tags |
+| `git tag -l`             | List tags matching pattern     |
+| `git tag --delete`       | Delete a tag                   |
+| `git tag --force` / `-f` | Force (overwrite) tag          |
+| `git tag --sign`         | Create GPG-signed tag          |
+| `git tag --verify`       | Verify GPG signature on a tag  |
+| `git mktag`              | Create tag object manually     |
+
+
+
+### ⚙️ Configuration & Customization (Alias & Hook)
+
+| Command                             | Explanation                           |
+| ----------------------------------- | ------------------------------------- |
+| `git config --global alias.*`       | Create short aliases for Git commands |
+| `git config --local core.hooksPath` | Set custom path for Git hooks         |
 
 
 ---
 
-### Additional
+### 📤 Push, Pull, & Syncing with Remotes
 
-| Command                            | Explanation                                                                |
-|------------------------------------|----------------------------------------------------------------------------|
-| `git annex`                        | Manage large files outside the Git repository                              |
-| `git am`                           | Apply patches from emails                                                  |
-| `git cherry-pick --upstream`       | Apply commit from another branch (with upstream awareness)                 |
-| `git describe`                     | Name a commit using closest tag and number of commits                      |
-| `git format-patch`                 | Create patch files from commits                                            |
-| `git fsck`                         | Verify connectivity and validity of Git objects                            |
-| `git gc`                           | Cleanup unnecessary files to optimize repository                           |
-| `git help`                         | Show help manual                                                           |
-| `git log --merges`                 | Show only merge commits                                                    |
-| `git log --oneline`                | Show compact one-line-per-commit log                                       |
-| `git log --pretty=`                | Customize log formatting                                                   |
-| `git log --short-commit`           | (Alias style) Show brief commit hash + message                             |
-| `git log --stat`                   | Show changes (insertions/deletions) per commit                             |
-| `git log --topo-order`             | Topologically ordered log                                                  |
-| `git merge-ours`                   | Use ‘ours’ strategy to resolve conflicts                                   |
-| `git merge-recursive`              | Merge strategy used for merging multiple branches                          |
-| `git merge-subtree`                | Merge external repositories as subtrees                                    |
-| `git mergetool`                    | Open configured merge tool                                                 |
-| `git mktag`                        | Create tag object manually                                                 |
-| `git mv`                           | Rename or move a file                                                      |
-| `git patch-id`                     | Generate stable patch ID                                                   |
-| `git p4`                           | Work with Perforce repositories                                            |
-| `git prune`                        | Remove unreachable objects                                                 |
-| `git pull --rebase`                | Pull and rebase instead of merge                                           |
-| `git push --mirror`                | Push all refs and tags; makes exact mirror of local repo                   |
-| `git push --tags`                  | Push all local tags                                                        |
-| `git reflog`                       | Show branch/reference history (incl. deleted)                              |
-| `git replace`                      | Replace Git objects                                                        |
-| `git reset --hard`                 | Reset everything to last commit (⚠️ destructive)                           |
-| `git reset --mixed`                | Reset index and unstage, but keep working dir changes                      |
-| `git revert`                       | Safely undo commits using new commit                                       |
-| `git rm`                           | Remove file from working dir and index                                     |
-| `git show-ref --heads`             | List branch refs                                                           |
-| `git show-ref --tags`              | List tag refs                                                              |
-| `git stash save`                   | Save current changes to stash                                              |
-| `git subtree`                      | Include sub-projects in a single repository                                |
-| `git tag --delete`                 | Delete a tag                                                               |
-| `git tag --force`                  | Force creation or overwrite tag                                            |
-| `git tag --sign`                   | Create GPG-signed tag                                                      |
-| `git tag -f`                       | Force (overwrite) tag                                                      |
-| `git tag -l`                       | List tags matching pattern                                                 |
-| `git tag --verify`                 | Verify GPG signature on a tag                                              |
-| `git unpack-file`                  | Extract blob from Git database                                             |
-| `git update-index`                 | Add/modify index directly                                                  |
-| `git verify-pack`                  | Verify contents of pack files                                              |
-| `git worktree`                     | Manage multiple working directories for branches                           |
+| Command             | Explanation                               |
+| ------------------- | ----------------------------------------- |
+| `git push --mirror` | Push all refs and tags; mirror local repo |
+| `git push --tags`   | Push all local tags                       |
+| `git pull --rebase` | Pull and rebase instead of merge          |
+
+
+### 📦 Patch & Email Workflow
+
+| Command            | Explanation                     |
+| ------------------ | ------------------------------- |
+| `git am`           | Apply patches from emails       |
+| `git format-patch` | Create patch files from commits |
+| `git patch-id`     | Generate stable patch ID        |
+
+
+### 🧩 Submodules / Subtrees / Large Files
+
+| Command       | Explanation                             |
+| ------------- | --------------------------------------- |
+| `git annex`   | Manage large files outside the Git repo |
+| `git p4`      | Work with Perforce repositories         |
+| `git subtree` | Include sub-projects in one repository  |
+
+
+
+### 🗂️ Index & File Operations
+
+| Command             | Explanation                                       |
+| ------------------- | ------------------------------------------------- |
+| `git mv`            | Rename or move a file                             |
+| `git rm`            | Remove file from working dir and index            |
+| `git update-index`  | Add/modify index directly                         |
+| `git unpack-file`   | Extract blob from Git database                    |
+| `git replace`       | Replace Git objects                               |
+| `git reset --hard`  | Reset everything to last commit (⚠️ destructive)  |
+| `git reset --mixed` | Reset index and unstage, keep working dir changes |
+| `git revert`        | Safely undo commit by creating a new one          |
+| `git stash save`    | Save current working changes to stash             |
