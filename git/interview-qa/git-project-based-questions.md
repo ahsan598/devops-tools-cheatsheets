@@ -1,7 +1,7 @@
 # 🚀 Git Real-World Project Scenarios (DevOps, CI/CD, GitOps)
 
 
-## 🔸 1. What branching strategy do you follow in your project?
+### 🔸 1. What branching strategy do you follow in your project?
 
 **Answer:**\
 We follow `Git Flow` or `Trunk Based Development`.
@@ -14,7 +14,7 @@ We follow `Git Flow` or `Trunk Based Development`.
 
 ---
 
-## 🔸 2. How do you handle a hotfix in Git?
+### 🔸 2. How do you handle a hotfix in Git?
 
 **Answer:**
 
@@ -35,7 +35,7 @@ git merge hotfix/issue-123
 
 ---
 
-## 🔸 3. How do you manage code review using Pull Requests?
+### 🔸 3. How do you manage code review using Pull Requests?
 
 **Answer:**
 
@@ -46,7 +46,7 @@ git merge hotfix/issue-123
 
 ---
 
-## 🔸 4. CI/CD pipeline failed due to a bad Git commit. What do you do?
+### 🔸 4. CI/CD pipeline failed due to a bad Git commit. What do you do?
 
 **Answer:**
 
@@ -61,7 +61,7 @@ git push
 
 ---
 
-## 🔸 5. How do you sync your feature branch with the latest develop changes?
+### 🔸 5. How do you sync your feature branch with the latest develop changes?
 
 **Answer:**
 
@@ -79,7 +79,7 @@ git merge origin/develop
 
 ---
 
-## 🔸 6. How do you handle conflicts during rebase?
+### 🔸 6. How do you handle conflicts during rebase?
 
 **Answer:**
 
@@ -95,7 +95,7 @@ git rebase --continue
 
 ---
 
-## 🔸 7. You want to test someone else's PR locally. How?
+### 🔸 7. You want to test someone else's PR locally. How?
 
 **Answer:**
 
@@ -106,7 +106,7 @@ git checkout pr-branch
 
 ---
 
-## 🔸 8. How do you roll back a release in Git?
+### 🔸 8. How do you roll back a release in Git?
 
 **Answer:**
 
@@ -120,7 +120,7 @@ git push
 
 ---
 
-## 🔸 9. How does Git help in GitOps or Infra-as-Code?
+### 🔸 9. How does Git help in GitOps or Infra-as-Code?
 
 **Answer:**
 
@@ -130,7 +130,7 @@ git push
 
 ---
 
-## 🔸 10. How do you clean stale branches?
+### 🔸 10. How do you clean stale branches?
 
 **Answer:**
 
@@ -150,7 +150,7 @@ git branch -d old-feature
 
 ---
 
-## 🔸 11. How can we manage security on GitHub branches? What are the approaches?**
+### 🔸 11. How can we manage security on GitHub branches? What are the approaches?**
 
 **A:**
 - **Branch protection rules**: Prevent force pushes, require PR reviews, enforce status checks before merging.
@@ -162,7 +162,7 @@ git branch -d old-feature
 ---
 
 
-## 🔸 12. How many branching strategies are there and how can we manage multiple developers working on them?**
+### 🔸 12. How many branching strategies are there and how can we manage multiple developers working on them?**
 
 **A:**
 - **Main strategies**:

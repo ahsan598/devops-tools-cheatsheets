@@ -208,7 +208,8 @@ Avoid `git reset` if commit is already pushed.
 
 ---
 
-### 📁 `.gitignore vs .gitkeep`
+### 📁 15. What is the difference between `.gitignore` vs `.gitkeep`?
+ 
 
 | File         | Purpose                                                            |
 | ------------ | ------------------------------------------------------------------ |
@@ -218,7 +219,7 @@ Avoid `git reset` if commit is already pushed.
 
 ---
 
-## 🔹 1. You made changes in a file but don’t want to commit them now. What will you do?
+### 🔹 1. You made changes in a file but don’t want to commit them now. What will you do?
 
 **Answer:**
 Use `git stash` to save the changes temporarily.
@@ -232,7 +233,7 @@ git stash apply
 
 ---
 
-## 🔹 2. You committed to the wrong branch by mistake. How to fix it?
+### 🔹 2. You committed to the wrong branch by mistake. How to fix it?
 
 **Answer:**
 ```bash
@@ -247,7 +248,7 @@ git reset --hard HEAD~1
 
 ---
 
-## 🔹 3. You want to undo the last commit but keep the changes in the working directory?
+### 🔹 3. You want to undo the last commit but keep the changes in the working directory?
 
 **Answer:**
 ```bash
@@ -256,7 +257,7 @@ git reset --soft HEAD~1
 
 ---
 
-## 🔹 4. How to resolve a merge conflict?
+### 🔹 4. How to resolve a merge conflict?
 
 **Answer:**
 - Git will mark conflicting areas with `<<<<<<<`, `=======`, and `>>>>>>>`.
@@ -269,7 +270,7 @@ git commit
 
 ---
 
-## 🔹 5. Difference between `git pull` and `git fetch`?
+### 🔹 5. Difference between `git pull` and `git fetch`?
 
 **Answer:**
 - `git fetch`: downloads changes from remote but doesn’t merge.
@@ -277,7 +278,7 @@ git commit
 
 ---
 
-## 🔹 6. You accidentally deleted a branch. Can you recover it?
+### 🔹 6. You accidentally deleted a branch. Can you recover it?
 
 **Answer:**
 ```bash
@@ -288,7 +289,7 @@ git checkout -b branch-name <commit-hash>
 
 ---
 
-## 🔹 7. How do you check who made changes to a specific line in a file?
+### 🔹 7. How do you check who made changes to a specific line in a file?
 
 **Answer:**
 ```bash
@@ -297,7 +298,7 @@ git blame <filename>
 
 ---
 
-## 🔹 8. What is detached HEAD? How to come out of it?
+### 🔹 8. What is detached HEAD? How to come out of it?
 
 **Answer:**
 Detached HEAD occurs when you're not on a branch (e.g., checked out a commit directly).  
@@ -308,7 +309,7 @@ git checkout main
 
 ---
 
-## 🔹 9. How to delete a remote branch?
+### 🔹 9. How to delete a remote branch?
 
 **Answer:**
 ```bash
@@ -317,7 +318,7 @@ git push origin --delete branch-name
 
 ---
 
-## 🔹 10. How to revert a commit that is already pushed?
+### 🔹 10. How to revert a commit that is already pushed?
 
 **Answer:**
 ```bash
@@ -327,7 +328,7 @@ git revert <commit-hash>
 
 ---
 
-## 🔹 11. How to clone a specific branch only?
+### 🔹 11. How to clone a specific branch only?
 
 **Answer:**
 ```bash
@@ -336,7 +337,7 @@ git clone -b branch-name --single-branch <repo-url>
 
 ---
 
-## 🔹 12. You want to move only one file from one branch to another. How?
+### 🔹 12. You want to move only one file from one branch to another. How?
 
 **Answer:**
 ```bash
@@ -345,7 +346,7 @@ git checkout source-branch -- path/to/file
 
 ---
 
-## 🔹 13. How to see the commit history in a simple format?
+### 🔹 13. How to see the commit history in a simple format?
 
 **Answer:**
 ```bash
@@ -354,7 +355,7 @@ git log --oneline --graph --all
 
 ---
 
-## 🔹 14. How do you squash multiple commits into one?
+### 🔹 14. How do you squash multiple commits into one?
 
 **Answer:**
 ```bash
@@ -364,7 +365,7 @@ git rebase -i HEAD~<number-of-commits>
 
 ---
 
-## 🔹 15. What is the difference between `git reset`, `git revert`, and `git checkout`?
+### 🔹 15. What is the difference between `git reset`, `git revert`, and `git checkout`?
 
 **Answer:**
 
@@ -376,7 +377,7 @@ git rebase -i HEAD~<number-of-commits>
 
 ---
 
-## 🔹 16. How to track a remote branch locally?
+### 🔹 16. How to track a remote branch locally?
 
 **Answer:**
 ```bash
@@ -385,7 +386,7 @@ git checkout --track origin/branch-name
 
 ---
 
-## 🔹 17. What’s the difference between `origin/master` and `master`?
+### 🔹 17. What’s the difference between `origin/master` and `master`?
 
 **Answer:**
 - `master`: local branch.
@@ -393,7 +394,7 @@ git checkout --track origin/branch-name
 
 ---
 
-## 🔹 18. How to push code to a new repo for the first time?
+### 🔹 18. How to push code to a new repo for the first time?
 
 **Answer:**
 ```bash
@@ -404,7 +405,7 @@ git push -u origin main
 
 ---
 
-## 🔹 19. You want to remove a file from Git but not from your system?
+### 🔹 19. You want to remove a file from Git but not from your system?
 
 **Answer:**
 ```bash
@@ -413,7 +414,7 @@ git rm --cached filename
 
 ---
 
-## 🔹 20. How to apply only specific stashed changes?
+### 🔹 20. How to apply only specific stashed changes?
 
 **Answer:**
 ```bash
